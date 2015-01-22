@@ -1,5 +1,5 @@
 var LocationActions = require('../actions/LocationActions');
-var History = require('../utils/History');
+var History = require('../core/History');
 var Path = require('../utils/Path');
 
 /**

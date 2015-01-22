@@ -1,4 +1,4 @@
-var createRouter = require('./createRouter');
+var Router = require('./Router');
 
 /**
  * A high-level convenience method that creates, configures, and
@@ -35,12 +35,9 @@ function runRouter(routes, location, callback) {
     location = null;
   }
 
-  var router = createRouter({
-    routes: routes,
-    location: location
-  });
+  var router = new Router(routes);
 
-  router.run(callback);
+  router.run(location, callback);
 
   return router;
 }

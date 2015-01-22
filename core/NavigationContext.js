@@ -1,4 +1,4 @@
-var React = require('react');
+var PropTypes = require('react').PropTypes;
 
 /**
  * Provides the router with context for Router.Navigation.
@@ -6,11 +6,11 @@ var React = require('react');
 var NavigationContext = {
 
   childContextTypes: {
-    makePath: React.PropTypes.func.isRequired,
-    makeHref: React.PropTypes.func.isRequired,
-    transitionTo: React.PropTypes.func.isRequired,
-    replaceWith: React.PropTypes.func.isRequired,
-    goBack: React.PropTypes.func.isRequired
+    makePath: PropTypes.func.isRequired,
+    makeHref: PropTypes.func.isRequired,
+    transitionTo: PropTypes.func.isRequired,
+    replaceWith: PropTypes.func.isRequired,
+    goBack: PropTypes.func.isRequired
   },
 
   getChildContext: function () {

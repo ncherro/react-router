@@ -1,6 +1,6 @@
 var invariant = require('react/lib/invariant');
 
-var FakeNode = {
+var NonRenderable = {
 
   render: function () {
     invariant(
@@ -12,4 +12,4 @@ var FakeNode = {
 
 };
 
-module.exports = FakeNode;
+module.exports = NonRenderable;

@@ -1,5 +1,5 @@
 var React = require('react');
-var RouteHandlerMixin = require('../mixins/RouteHandler');
+var RouteHandling = require('../core/RouteHandling');
 
 /**
  * A <RouteHandler> component renders the active child route handler
@@ -9,16 +9,10 @@ var RouteHandler = React.createClass({
 
   displayName: 'RouteHandler',
 
-  mixins: [RouteHandlerMixin],
-
-  getDefaultProps: function () {
-    return {
-      ref: '__routeHandler__'
-    };
-  },
+  mixins: [ RouteHandling ],
 
   render: function () {
-    return this.getRouteHandler();
+    return this.createChildRouteHandler();
   }
 
 });
