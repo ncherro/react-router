@@ -14,7 +14,7 @@ module.exports = {
     var isDraft = dir.charAt(0) === '_';
 
     if (!isDraft && isDirectory(path.join(__dirname, dir)))
-      entries[dir] = path.join(__dirname, dir, 'app.js');
+      entries[dir] = path.join(__dirname, dir, 'app.cjsx');
 
     return entries;
   }, {}),
@@ -28,11 +28,14 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader?harmony' }
+      { test: /\.js$/, loader: 'jsx-loader?harmony' },
+      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx'] },
+      { test: /\.coffee$/, loader: 'coffee'}
     ]
   },
 
   resolve: {
+    extensions: ['', '.cjsx', '.coffee', '.js'],
     alias: {
       'react-router': '../../modules'
     }
